@@ -1,0 +1,19 @@
+#!/usr/bin/env python3
+import sys
+from sys import argv
+# allow users to use math function like sqrt sin and so on easily
+from math import *
+
+if len(argv) == 1: # scriptname
+    print("Enter math expression to evaluate")
+else:
+    expr = ("".join(argv[1:])).strip()
+    try:
+        result = str(eval(expr))
+    except:
+        print('Invalid expression: {}'.format(expr))
+        sys.exit(0)
+    width = max(len(expr), len(result)) + 3
+    print("{0: >{1}}".format(expr, width))
+    print('=')
+    print("{0: >{1}}".format(result, width))
