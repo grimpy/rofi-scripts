@@ -1,0 +1,11 @@
+#!/usr/bin/python3 
+
+from sys import argv
+from webbrowser import open_new_tab
+
+babyduck = "https://duckduckgo.com/?q="
+
+if len(argv) == 1: #SCRIPT NAME:
+    print("Enter search term.")
+else:
+    open_new_tab(babyduck + "".join(argv[1:]))
